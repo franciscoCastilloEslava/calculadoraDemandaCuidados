@@ -1,0 +1,31 @@
+.containerCard, p-card {
+  margin-top: 2rem;
+}
+
+.containerTable {
+  overflow-x: scroll;
+  padding: 1remv0;
+}
+
+table, th, td {
+  padding: 4px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f4f4;
+  
+}
+
+th {
+  background-color: #4FCDAC;
+  color: white;
+}
+
+td, td:last-child {
+  border-top: 1px solid #000;
+  
+}

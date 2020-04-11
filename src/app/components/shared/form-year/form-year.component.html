@@ -1,0 +1,27 @@
+<form [formGroup]="form" (submit)="submitForm($event)">
+    <p-multiSelect
+        [options]="optionsYear"
+        formControlName="year"
+        selectionLimit="2"
+        defaultLabel="Selecione una fecha"
+        [filter]="true"></p-multiSelect>
+    
+    <!-- <p-multiSelect
+        [options]="optionsTerritory"
+        formControlName="territory"
+        selectionLimit="2"
+        [filter]="true"></p-multiSelect> -->
+        
+    <div>
+        <!-- <span *ngFor="let item of selectedYears">{{ item.label }},</span> -->
+    </div>
+
+    <br>
+
+    <button
+        *ngIf="isShow"
+        pButton 
+        type="submit"
+        label="Ok"></button>
+
+</form>

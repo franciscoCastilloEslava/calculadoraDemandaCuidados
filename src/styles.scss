@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Open Sans,Helvetica Neue,sans-serif;
+}
+
+/* Genneral*/
+.text-center {
+    text-align: center;
+}
+.padding-1r {
+    padding: 1rem;
+}
+.padding-2r {
+    padding: 2rem;
+}
+
+/**/
+.wrapper-blue {
+    background: #5DF9D0;
+    background: linear-gradient(90deg, #4FCDAC 0%, #5DF9D0 100%);
+    color: #fff;
+}
+
+body .ui-multiselect {
+    min-width: 10rem;
+}

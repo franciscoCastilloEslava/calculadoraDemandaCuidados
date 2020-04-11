@@ -1,0 +1,14 @@
+<div class="containerLogin">
+    <p-card header="Formulario">
+        <div class="ui-inputgroup">
+            <input type="text" pInputText placeholder="Usuario" [(ngModel)]="userName">
+        </div>
+
+        <div class="ui-inputgroup">
+            <input type="password" pPassword placeholder="Pass" [(ngModel)]="pass"/>
+        </div>
+
+        <br>
+        <button pButton type="button" label="Click" (click)="handleClick($event)" ></button>
+    </p-card>
+</div>

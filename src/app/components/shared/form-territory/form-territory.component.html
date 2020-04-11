@@ -1,0 +1,73 @@
+<form [formGroup]="form" (submit)="submitForm($event)">
+    <p-multiSelect
+        [options]="optionsTerritory"
+        formControlName="territory"
+        defaultLabel="Selecione una territorio"
+        selectionLimit="2"
+        [filter]="true"></p-multiSelect>
+
+    <br>
+    <br>
+
+    <div *ngIf="form.value && form.value.territory && form.value.territory.code == 'PER'">
+        <span class="ui-float-label">
+            <input
+                pInputText
+                id="float-input"
+                type="number"
+                formControlName="territoryRango0"> 
+            <label for="float-input">0-4</label>
+        </span>
+
+        <br>
+
+        <span class="ui-float-label">
+            <input
+                pInputText
+                id="float-input"
+                type="number"
+                formControlName="territoryRango5"> 
+            <label for="float-input">5-14</label>
+        </span>
+
+        <br>
+
+        <span class="ui-float-label">
+            <input
+                pInputText
+                id="float-input"
+                type="number"
+                formControlName="territoryRango15"> 
+            <label for="float-input">15-64</label>
+        </span>
+
+        <br>
+
+        <span class="ui-float-label">
+            <input
+                pInputText
+                id="float-input"
+                type="number"
+                formControlName="territoryRango65"> 
+            <label for="float-input">65-80</label>
+        </span>
+
+        <br>
+
+        <span class="ui-float-label">
+            <input
+                pInputText
+                id="float-input"
+                type="number"
+                formControlName="territoryRango80"> 
+            <label for="float-input">+80</label>
+        </span>
+
+    </div>
+
+    <button
+        *ngIf="isShow"
+        pButton 
+        type="submit"
+        label="Ok"></button>
+</form>

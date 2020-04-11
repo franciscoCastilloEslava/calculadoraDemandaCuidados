@@ -1,0 +1,74 @@
+<form [formGroup]="form" (submit)="submitForm($event)">
+    <p-dropdown 
+        [options]="optionsScale"
+        formControlName="scale"
+        placeholder="Selecione una escala"
+        optionLabel="label"
+        [showClear]="true"
+        (onChange)="changeValue($event)"
+        required></p-dropdown>
+
+    <br>
+    <br>
+
+    <span class="ui-float-label">
+        <input
+            pInputText
+            type="number"
+            id="float-input"
+            formControlName="scaleRango0"> 
+        <label for="float-input">0-4</label>
+    </span>
+
+    <br>
+
+    <span class="ui-float-label">
+        <input
+            pInputText
+            type="number"
+            id="float-input"
+            formControlName="scaleRango5"> 
+        <label for="float-input">5-14</label>
+    </span>
+
+    <br>
+
+    <span class="ui-float-label">
+        <input
+            pInputText
+            type="number"
+            id="float-input"
+            formControlName="scaleRango15"> 
+        <label for="float-input">15-64</label>
+    </span>
+
+    <br>
+
+    <span class="ui-float-label">
+        <input
+            pInputText
+            type="number"
+            id="float-input"
+            formControlName="scaleRango65"> 
+        <label for="float-input">65-80</label>
+    </span>
+
+    <br>
+
+    <span class="ui-float-label">
+        <input
+            pInputText
+            type="number"
+            id="float-input"
+            formControlName="scaleRango80"> 
+        <label for="float-input">+80</label>
+    </span>
+
+    <br>
+
+    <button
+        *ngIf="isShow"
+        pButton 
+        type="submit"
+        label="Ok"></button>
+</form>

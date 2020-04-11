@@ -1,0 +1,91 @@
+<p-card header="Formulario">
+    <div class="p-grid">
+        <div class="p-col-12">
+            <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
+        </div>
+
+        <div class="p-col-12 p-md-4">
+            <app-form-scale (submitFormScale)="handlerFormScale($event)" [scaleDisable]="scaleDisable"></app-form-scale>
+        </div>
+
+        <div *ngIf="activeIndex === 1 || activeIndex === 2" class="p-col-12 p-md-4">
+            <app-form-territory (submitFormTerritory)="handlerFormTerritory($event)" [territoryDisable]="territoryDisable"></app-form-territory>
+        </div>
+
+        <div *ngIf="activeIndex === 2" class="p-col-12 p-md-4">
+            <app-form-year (submitFormYear)="handlerFormYear($event)" [yearDisable]="yearDisable"></app-form-year>
+        </div>
+    </div>
+    <button
+        *ngIf="isTable"
+        pButton 
+        type="button"
+        label="Reset"
+        (click)="resetForm()"></button>
+</p-card>
+
+<div *ngIf="isTable" class="containerCard">
+    <p-card header="Tabla (Datos obtenidos del INE)">
+        <div *ngIf="isTable">
+            <div class="containerTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Años - Población</th>
+                            <th *ngFor="let item of headerTable.year">
+                                {{ item }}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Datos</th>
+                            <th *ngFor="let item of headerTable.title">
+                                {{ item }}
+                            </th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <!-- <pre>{{ element }}</pre> -->
+                        <tr *ngFor="let element of tableBody; let i=index">
+                            <td *ngIf="i === 0">
+                                <strong>Total</strong>
+                            </td>
+                            <td *ngIf="i === 1">
+                                <strong>0-4 años</strong>
+                            </td>
+                            <td *ngIf="i === 2">
+                                <strong>5-14 años</strong>
+                            </td>
+                            <td *ngIf="i === 3">
+                                <strong>15-64 años</strong>
+                            </td>
+                            <td *ngIf="i === 4">
+                                <strong>65-80 años</strong>
+                            </td>
+                            <td *ngIf="i === 5">
+                                <strong>+80 años</strong>
+                            </td>
+                            <ng-container *ngFor="let item of element; let i=index">
+                                <!-- <td>{{ item | number:'3.1-1'}}</td> -->
+                                <td>{{ item}}</td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p-card>
+</div>
+
+<div *ngIf="isTable" class="containerCard">
+    <p-card *ngIf="isTable" class="containerCard" header="Gráficas">
+        <h1>Gráfica de Barra</h1>
+        <p-chart type="bar" [data]="dataBara"></p-chart>
+        
+        <h1>Gráfica de Linea</h1>
+        <p-chart type="line" [data]="dataLine"></p-chart>
+
+        <h1>Gráfica Radar</h1>
+        <p-chart type="radar" [data]="dataRadar"></p-chart>
+    </p-card>
+</div>
