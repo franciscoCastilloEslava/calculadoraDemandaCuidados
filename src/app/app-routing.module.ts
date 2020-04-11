@@ -7,10 +7,6 @@ import { LoginComponent } from './features/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  }, {
     path: 'home',
     component: LayoutComponent,
     children: [
@@ -26,6 +22,10 @@ const routes: Routes = [
   }, {
     path: 'login',
     component: LoginComponent
+  }, {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   }, {
     path: '**',
     component: LoginComponent
